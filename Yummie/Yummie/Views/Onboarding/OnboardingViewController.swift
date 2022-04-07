@@ -35,10 +35,12 @@ class OnboardingViewController: UIViewController {
         
         nextButton.layer.cornerRadius = 15
         
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
         viewModel.getslides()
+        pageControll.numberOfPages = viewModel.slides.count
         
     }
     
