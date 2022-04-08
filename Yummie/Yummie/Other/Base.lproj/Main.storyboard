@@ -138,8 +138,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cs-Li-gy5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-T2-pdr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="660"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-T2-pdr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-Pi-bCB">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
@@ -180,7 +180,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-7N-EXx">
-                                                <rect key="frame" x="0.0" y="172" width="414" height="334"/>
+                                                <rect key="frame" x="0.0" y="187" width="414" height="344"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popuar Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXu-Ka-76w">
                                                         <rect key="frame" x="16" y="10" width="382" height="24"/>
@@ -192,7 +192,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x3u-MA-hQm">
-                                                        <rect key="frame" x="0.0" y="34" width="414" height="300"/>
+                                                        <rect key="frame" x="0.0" y="44" width="414" height="300"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="D27-VD-BuY"/>
@@ -212,13 +212,13 @@
                                                     <constraint firstAttribute="trailing" secondItem="x3u-MA-hQm" secondAttribute="trailing" id="CCj-pN-pLm"/>
                                                     <constraint firstItem="x3u-MA-hQm" firstAttribute="leading" secondItem="uKI-7N-EXx" secondAttribute="leading" id="fay-wC-Gig"/>
                                                     <constraint firstItem="kXu-Ka-76w" firstAttribute="leading" secondItem="uKI-7N-EXx" secondAttribute="leading" constant="16" id="lZd-b5-eRh"/>
-                                                    <constraint firstItem="x3u-MA-hQm" firstAttribute="top" secondItem="kXu-Ka-76w" secondAttribute="bottom" id="mki-TB-CvV"/>
+                                                    <constraint firstItem="x3u-MA-hQm" firstAttribute="top" secondItem="kXu-Ka-76w" secondAttribute="bottom" constant="10" id="mki-TB-CvV"/>
                                                     <constraint firstAttribute="bottom" secondItem="x3u-MA-hQm" secondAttribute="bottom" id="wie-i8-g6B"/>
                                                     <constraint firstAttribute="trailing" secondItem="kXu-Ka-76w" secondAttribute="trailing" constant="16" id="wnz-aP-bhp"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umF-bO-3LD">
-                                                <rect key="frame" x="0.0" y="506" width="414" height="154"/>
+                                                <rect key="frame" x="0.0" y="546" width="414" height="164"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef's Specials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfL-ul-C1c">
                                                         <rect key="frame" x="16" y="10" width="382" height="24"/>
@@ -229,8 +229,8 @@
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-ob-SeB">
-                                                        <rect key="frame" x="0.0" y="34" width="414" height="120"/>
+                                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-ob-SeB">
+                                                        <rect key="frame" x="0.0" y="44" width="414" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="52g-sK-8aX"/>
@@ -251,7 +251,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="TZY-ob-SeB" secondAttribute="trailing" id="A5v-QJ-7Zw"/>
                                                     <constraint firstAttribute="trailing" secondItem="XfL-ul-C1c" secondAttribute="trailing" constant="16" id="Eni-7d-pNX"/>
                                                     <constraint firstItem="XfL-ul-C1c" firstAttribute="leading" secondItem="umF-bO-3LD" secondAttribute="leading" constant="16" id="Jzn-lV-jJc"/>
-                                                    <constraint firstItem="TZY-ob-SeB" firstAttribute="top" secondItem="XfL-ul-C1c" secondAttribute="bottom" id="WaG-xk-xap"/>
+                                                    <constraint firstItem="TZY-ob-SeB" firstAttribute="top" secondItem="XfL-ul-C1c" secondAttribute="bottom" constant="10" id="WaG-xk-xap"/>
                                                     <constraint firstAttribute="bottom" secondItem="TZY-ob-SeB" secondAttribute="bottom" id="l7Z-eM-CdV"/>
                                                 </constraints>
                                             </view>

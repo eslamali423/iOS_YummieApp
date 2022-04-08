@@ -10,12 +10,13 @@
 		282A8E2027FFA82400336ECF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E1F27FFA82400336ECF /* CardView.swift */; };
 		282A8E2327FFAC3900336ECF /* PopularDishesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E2227FFAC3900336ECF /* PopularDishesViewModel.swift */; };
 		282A8E2627FFAC5500336ECF /* ChefsSpecialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E2527FFAC5500336ECF /* ChefsSpecialsViewModel.swift */; };
-		282A8E2A27FFAFA400336ECF /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E2827FFAFA400336ECF /* DishCollectionViewCell.swift */; };
-		282A8E2B27FFAFA400336ECF /* DishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282A8E2927FFAFA400336ECF /* DishCollectionViewCell.xib */; };
 		282A8E2F27FFB1A100336ECF /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E2E27FFB1A100336ECF /* Dish.swift */; };
+		282A8E45280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E43280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift */; };
+		282A8E46280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282A8E44280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib */; };
+		282A8E4B28008F8700336ECF /* PopularDishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E4928008F8700336ECF /* PopularDishCollectionViewCell.swift */; };
+		282A8E4C28008F8700336ECF /* PopularDishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282A8E4A28008F8700336ECF /* PopularDishCollectionViewCell.xib */; };
 		282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282BA04827FF4E0500D65155 /* AppDelegate.swift */; };
 		282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282BA04A27FF4E0500D65155 /* SceneDelegate.swift */; };
-		282BA04D27FF4E0500D65155 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282BA04C27FF4E0500D65155 /* ViewController.swift */; };
 		282BA05027FF4E0500D65155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282BA04E27FF4E0500D65155 /* Main.storyboard */; };
 		282BA05227FF4E0600D65155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282BA05127FF4E0600D65155 /* Assets.xcassets */; };
 		282BA05527FF4E0600D65155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282BA05327FF4E0600D65155 /* LaunchScreen.storyboard */; };
@@ -35,13 +36,14 @@
 		282A8E1F27FFA82400336ECF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		282A8E2227FFAC3900336ECF /* PopularDishesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishesViewModel.swift; sourceTree = "<group>"; };
 		282A8E2527FFAC5500336ECF /* ChefsSpecialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefsSpecialsViewModel.swift; sourceTree = "<group>"; };
-		282A8E2827FFAFA400336ECF /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
-		282A8E2927FFAFA400336ECF /* DishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishCollectionViewCell.xib; sourceTree = "<group>"; };
 		282A8E2E27FFB1A100336ECF /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		282A8E43280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChefSpecialsCollectionViewCell.swift; sourceTree = "<group>"; };
+		282A8E44280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefSpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
+		282A8E4928008F8700336ECF /* PopularDishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishCollectionViewCell.swift; sourceTree = "<group>"; };
+		282A8E4A28008F8700336ECF /* PopularDishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishCollectionViewCell.xib; sourceTree = "<group>"; };
 		282BA04527FF4E0500D65155 /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282BA04827FF4E0500D65155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282BA04A27FF4E0500D65155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		282BA04C27FF4E0500D65155 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		282BA04F27FF4E0500D65155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		282BA05127FF4E0600D65155 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282BA05427FF4E0600D65155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +74,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282A8E3227FFCF8200336ECF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				282BA06127FF524000D65155 /* Onboarding */,
+				282BA06F27FF70BE00D65155 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		282A8E3427FFCFA000336ECF /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				282BA07427FF7DF300D65155 /* CategoryCollectionViewCell.swift */,
+				282BA07527FF7DF300D65155 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		282A8E3627FFCFAE00336ECF /* PopularDishsCell */ = {
+			isa = PBXGroup;
+			children = (
+				282A8E4928008F8700336ECF /* PopularDishCollectionViewCell.swift */,
+				282A8E4A28008F8700336ECF /* PopularDishCollectionViewCell.xib */,
+			);
+			path = PopularDishsCell;
+			sourceTree = "<group>";
+		};
+		282A8E3727FFCFD500336ECF /* ChefSpecialCell */ = {
+			isa = PBXGroup;
+			children = (
+				282A8E43280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift */,
+				282A8E44280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib */,
+			);
+			path = ChefSpecialCell;
+			sourceTree = "<group>";
+		};
+		282A8E3E27FFD1DE00336ECF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		282A8E3F27FFD1EE00336ECF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				282BA04E27FF4E0500D65155 /* Main.storyboard */,
+				282BA05127FF4E0600D65155 /* Assets.xcassets */,
+				282BA05327FF4E0600D65155 /* LaunchScreen.storyboard */,
+				282BA04827FF4E0500D65155 /* AppDelegate.swift */,
+				282BA04A27FF4E0500D65155 /* SceneDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		282BA03C27FF4E0500D65155 = {
 			isa = PBXGroup;
 			children = (
@@ -93,15 +150,11 @@
 		282BA04727FF4E0500D65155 /* Yummie */ = {
 			isa = PBXGroup;
 			children = (
+				282A8E3F27FFD1EE00336ECF /* Other */,
+				282A8E3E27FFD1DE00336ECF /* Managers */,
+				282BA05D27FF521100D65155 /* Models */,
 				282BA05F27FF522E00D65155 /* Views */,
 				282BA05E27FF522100D65155 /* ViewModels */,
-				282BA05D27FF521100D65155 /* Models */,
-				282BA04827FF4E0500D65155 /* AppDelegate.swift */,
-				282BA04A27FF4E0500D65155 /* SceneDelegate.swift */,
-				282BA04C27FF4E0500D65155 /* ViewController.swift */,
-				282BA04E27FF4E0500D65155 /* Main.storyboard */,
-				282BA05127FF4E0600D65155 /* Assets.xcassets */,
-				282BA05327FF4E0600D65155 /* LaunchScreen.storyboard */,
 				282BA05627FF4E0600D65155 /* Info.plist */,
 			);
 			path = Yummie;
@@ -131,9 +184,8 @@
 		282BA05F27FF522E00D65155 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				282BA06F27FF70BE00D65155 /* Home */,
-				282BA06127FF524000D65155 /* Onboarding */,
 				282BA06027FF523500D65155 /* CustomViews */,
+				282A8E3227FFCF8200336ECF /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,11 +193,10 @@
 		282BA06027FF523500D65155 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				282A8E3727FFCFD500336ECF /* ChefSpecialCell */,
+				282A8E3627FFCFAE00336ECF /* PopularDishsCell */,
+				282A8E3427FFCFA000336ECF /* CategoryCell */,
 				282A8E1F27FFA82400336ECF /* CardView.swift */,
-				282BA07427FF7DF300D65155 /* CategoryCollectionViewCell.swift */,
-				282BA07527FF7DF300D65155 /* CategoryCollectionViewCell.xib */,
-				282A8E2827FFAFA400336ECF /* DishCollectionViewCell.swift */,
-				282A8E2927FFAFA400336ECF /* DishCollectionViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -247,7 +298,8 @@
 				282BA05527FF4E0600D65155 /* LaunchScreen.storyboard in Resources */,
 				282BA05227FF4E0600D65155 /* Assets.xcassets in Resources */,
 				282BA05027FF4E0500D65155 /* Main.storyboard in Resources */,
-				282A8E2B27FFAFA400336ECF /* DishCollectionViewCell.xib in Resources */,
+				282A8E4C28008F8700336ECF /* PopularDishCollectionViewCell.xib in Resources */,
+				282A8E46280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +352,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				282A8E4B28008F8700336ECF /* PopularDishCollectionViewCell.swift in Sources */,
+				282A8E45280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift in Sources */,
 				282BA06727FF563E00D65155 /* OnboardingSlide.swift in Sources */,
 				282BA08027FF831700D65155 /* CategorayViewModel.swift in Sources */,
 				282BA07A27FF7F4B00D65155 /* DishCategory.swift in Sources */,
-				282BA04D27FF4E0500D65155 /* ViewController.swift in Sources */,
 				282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */,
 				282BA07127FF70D200D65155 /* HomeViewController.swift in Sources */,
 				282BA07627FF7DF300D65155 /* CategoryCollectionViewCell.swift in Sources */,
-				282A8E2A27FFAFA400336ECF /* DishCollectionViewCell.swift in Sources */,
 				282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */,
 				282BA06327FF526400D65155 /* OnboardingViewController.swift in Sources */,
 				282BA06D27FF5A6900D65155 /* OnboardingViewModel.swift in Sources */,

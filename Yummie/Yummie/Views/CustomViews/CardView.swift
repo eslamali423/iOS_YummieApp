@@ -24,6 +24,7 @@ class CardView : UIView {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = .zero
         layer.cornerRadius = 12
+        layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
         
         
