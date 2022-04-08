@@ -20,7 +20,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     //MARK:- Configuration
     func configure (model : DishCategory ) {
         titleLabel.text = model.name
-        categoryImageView.kf.setImage(with: URL(string: model.image))
+        guard let url = URL(string: model.image ?? "") else {return }
+        categoryImageView.kf.setImage(with: url)
 
 
     }
