@@ -43,6 +43,7 @@ class DishDetailViewController: UIViewController {
         let label =  UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
+        label.textAlignment = .justified
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 15, weight: .regular)
        
@@ -57,7 +58,7 @@ class DishDetailViewController: UIViewController {
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         
            textField.font = UIFont.systemFont(ofSize: 15)
-          
+        textField.layer.cornerRadius = 15
             textField.autocorrectionType = UITextAutocorrectionType.no
             textField.keyboardType = UIKeyboardType.default
             textField.returnKeyType = UIReturnKeyType.done

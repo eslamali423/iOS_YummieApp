@@ -113,7 +113,10 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         
         if collectionView == categoryCollectionView {
+            let dishListVC = storyboard?.instantiateViewController(identifier: "DishListViewController") as! DishListViewController
+            dishListVC.category = categoryViewModel.categories[indexPath.row]
             
+            navigationController?.pushViewController(dishListVC, animated: true)
         }else {
             let dish = collectionView == popularDishesCollectionView ? popularDishesViewModel.dishes[indexPath.row] : chefsSpecialViewModel.dishes[indexPath.row]
             
