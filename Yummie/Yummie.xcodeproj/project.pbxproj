@@ -15,6 +15,7 @@
 		282A8E46280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282A8E44280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib */; };
 		282A8E4B28008F8700336ECF /* PopularDishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E4928008F8700336ECF /* PopularDishCollectionViewCell.swift */; };
 		282A8E4C28008F8700336ECF /* PopularDishCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282A8E4A28008F8700336ECF /* PopularDishCollectionViewCell.xib */; };
+		282A8E5028012C1300336ECF /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A8E4F28012C1300336ECF /* DishDetailViewController.swift */; };
 		282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282BA04827FF4E0500D65155 /* AppDelegate.swift */; };
 		282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282BA04A27FF4E0500D65155 /* SceneDelegate.swift */; };
 		282BA05027FF4E0500D65155 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282BA04E27FF4E0500D65155 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		282A8E44280086CA00336ECF /* ChefSpecialsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChefSpecialsCollectionViewCell.xib; sourceTree = "<group>"; };
 		282A8E4928008F8700336ECF /* PopularDishCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDishCollectionViewCell.swift; sourceTree = "<group>"; };
 		282A8E4A28008F8700336ECF /* PopularDishCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularDishCollectionViewCell.xib; sourceTree = "<group>"; };
+		282A8E4F28012C1300336ECF /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		282BA04527FF4E0500D65155 /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282BA04827FF4E0500D65155 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282BA04A27FF4E0500D65155 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,8 +79,9 @@
 		282A8E3227FFCF8200336ECF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				282BA07027FF70D200D65155 /* HomeViewController.swift */,
+				282A8E4F28012C1300336ECF /* DishDetailViewController.swift */,
 				282BA06127FF524000D65155 /* Onboarding */,
-				282BA06F27FF70BE00D65155 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,14 +211,6 @@
 				282BA06927FF57CD00D65155 /* OnboardingCollectionViewCell.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		282BA06F27FF70BE00D65155 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				282BA07027FF70D200D65155 /* HomeViewController.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		5AEB8B721299809416F58860 /* Frameworks */ = {
@@ -360,6 +355,7 @@
 				282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */,
 				282BA07127FF70D200D65155 /* HomeViewController.swift in Sources */,
 				282BA07627FF7DF300D65155 /* CategoryCollectionViewCell.swift in Sources */,
+				282A8E5028012C1300336ECF /* DishDetailViewController.swift in Sources */,
 				282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */,
 				282BA06327FF526400D65155 /* OnboardingViewController.swift in Sources */,
 				282BA06D27FF5A6900D65155 /* OnboardingViewModel.swift in Sources */,

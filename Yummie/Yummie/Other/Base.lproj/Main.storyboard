@@ -139,10 +139,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cX0-T2-pdr">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGl-Pi-bCB">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUE-Js-kmh">
                                                         <rect key="frame" x="16" y="16" width="382" height="24"/>
@@ -154,10 +154,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6go-os-ELD">
-                                                        <rect key="frame" x="0.0" y="50" width="414" height="122"/>
+                                                        <rect key="frame" x="0.0" y="50" width="414" height="140"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="122" id="msk-O5-dJr"/>
+                                                            <constraint firstAttribute="height" constant="140" id="msk-O5-dJr"/>
                                                         </constraints>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lsi-MN-9ic">
                                                             <size key="itemSize" width="128" height="128"/>
@@ -180,7 +180,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKI-7N-EXx">
-                                                <rect key="frame" x="0.0" y="187" width="414" height="344"/>
+                                                <rect key="frame" x="0.0" y="205" width="414" height="344"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popuar Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXu-Ka-76w">
                                                         <rect key="frame" x="16" y="10" width="382" height="24"/>
@@ -218,10 +218,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umF-bO-3LD">
-                                                <rect key="frame" x="0.0" y="546" width="414" height="164"/>
+                                                <rect key="frame" x="0.0" y="564" width="414" height="144"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chef's Specials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfL-ul-C1c">
-                                                        <rect key="frame" x="16" y="10" width="382" height="24"/>
+                                                        <rect key="frame" x="16" y="0.0" width="382" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="YGY-zF-nmN"/>
                                                         </constraints>
@@ -230,7 +230,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-ob-SeB">
-                                                        <rect key="frame" x="0.0" y="44" width="414" height="120"/>
+                                                        <rect key="frame" x="0.0" y="24" width="414" height="120"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="52g-sK-8aX"/>
@@ -246,12 +246,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="XfL-ul-C1c" firstAttribute="top" secondItem="umF-bO-3LD" secondAttribute="top" constant="10" id="3HU-Vn-tgl"/>
+                                                    <constraint firstItem="XfL-ul-C1c" firstAttribute="top" secondItem="umF-bO-3LD" secondAttribute="top" id="3HU-Vn-tgl"/>
                                                     <constraint firstItem="TZY-ob-SeB" firstAttribute="leading" secondItem="umF-bO-3LD" secondAttribute="leading" id="7SU-1k-lXm"/>
                                                     <constraint firstAttribute="trailing" secondItem="TZY-ob-SeB" secondAttribute="trailing" id="A5v-QJ-7Zw"/>
                                                     <constraint firstAttribute="trailing" secondItem="XfL-ul-C1c" secondAttribute="trailing" constant="16" id="Eni-7d-pNX"/>
                                                     <constraint firstItem="XfL-ul-C1c" firstAttribute="leading" secondItem="umF-bO-3LD" secondAttribute="leading" constant="16" id="Jzn-lV-jJc"/>
-                                                    <constraint firstItem="TZY-ob-SeB" firstAttribute="top" secondItem="XfL-ul-C1c" secondAttribute="bottom" constant="10" id="WaG-xk-xap"/>
+                                                    <constraint firstItem="TZY-ob-SeB" firstAttribute="top" secondItem="XfL-ul-C1c" secondAttribute="bottom" id="WaG-xk-xap"/>
                                                     <constraint firstAttribute="bottom" secondItem="TZY-ob-SeB" secondAttribute="bottom" id="l7Z-eM-CdV"/>
                                                 </constraints>
                                             </view>
@@ -295,6 +295,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APV-tc-fig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1611.5942028985507" y="75.669642857142847"/>
+        </scene>
+        <!--Dish Detail View Controller-->
+        <scene sceneID="1SM-KN-gF8">
+            <objects>
+                <viewController storyboardIdentifier="DishDetailViewController" id="Hhf-7w-UrU" customClass="DishDetailViewController" customModule="Yummie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OM5-o1-B38">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pAK-Gx-xlq"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPi-mg-Hyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326.0869565217395" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CnA-Gt-ylJ">

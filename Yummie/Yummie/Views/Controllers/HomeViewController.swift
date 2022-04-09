@@ -106,7 +106,22 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)  {
+        collectionView.deselectItem(at: indexPath, animated: true)
         
+        
+        if collectionView == categoryCollectionView {
+            
+        }else {
+            let dish = collectionView == popularDishesCollectionView ? popularDishesViewModel.dishes[indexPath.row] : chefsSpecialViewModel.dishes[indexPath.row]
+            
+            let dishVC = storyboard?.instantiateViewController(identifier: "DishDetailViewController") as! DishDetailViewController
+            dishVC.dish = dish
+            navigationController?.pushViewController(dishVC, animated: true)
+            
+        }
         
         
     }
