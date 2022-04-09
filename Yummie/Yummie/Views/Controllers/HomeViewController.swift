@@ -17,8 +17,10 @@ class HomeViewController: UIViewController {
     var categoryViewModel = CategorayViewModel()
     var popularDishesViewModel = PopularDishesViewModel()
     var chefsSpecialViewModel = ChefsSpecialsViewModel()
+
+ 
     
-    var categories : [DishCategory] = []
+    
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -59,6 +61,10 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func didTabCartButton(_ sender: Any) {
+        let dishVC = storyboard?.instantiateViewController(identifier: "DishListViewController") as! DishListViewController
+        
+        
+        navigationController?.pushViewController(dishVC, animated: true)
     }
     
 }

@@ -9,13 +9,13 @@ import UIKit
 import Kingfisher
 
 class DishDetailViewController: UIViewController {
-
+    
     //MARK:- Vars
     
     static let identifier = "DishDetailViewController"
-  
+    
     private let dishImageView : UIImageView = {
-       let image = UIImageView()
+        let image = UIImageView()
         image.contentMode = .scaleToFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -46,25 +46,25 @@ class DishDetailViewController: UIViewController {
         label.textAlignment = .justified
         label.textColor = .darkGray
         label.font = .systemFont(ofSize: 15, weight: .regular)
-       
+        
         return label
     }()
     
-    private let nameField : UITextField = {
-       let textField = UITextField()
+    public let nameField : UITextField = {
+        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Enter your Namr"
-     //   textField.borderStyle = .line
+        
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         
-           textField.font = UIFont.systemFont(ofSize: 15)
+        textField.font = UIFont.systemFont(ofSize: 15)
         textField.layer.cornerRadius = 15
-            textField.autocorrectionType = UITextAutocorrectionType.no
-            textField.keyboardType = UIKeyboardType.default
-            textField.returnKeyType = UIReturnKeyType.done
-            textField.clearButtonMode = UITextField.ViewMode.whileEditing
-           
-
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.keyboardType = UIKeyboardType.default
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        
+        
         return textField
     }()
     
@@ -79,7 +79,7 @@ class DishDetailViewController: UIViewController {
         return button
     }()
     
-   
+    
     var dish : Dish!
     
     //MARK:- Life Cycle
@@ -91,12 +91,17 @@ class DishDetailViewController: UIViewController {
         view.addSubview(descriptionLabel)
         view.addSubview(nameField)
         view.addSubview(orderButton)
-       
-        applyConstraints()
         
+        applyConstraints()
         configure()
+        
+        orderButton.addTarget(self, action: #selector(didTapOrderButton), for: .touchUpInside)
     }
     
+    @objc func didTapOrderButton(){
+        
+        
+    }
     
     func applyConstraints() {
         
@@ -109,7 +114,7 @@ class DishDetailViewController: UIViewController {
             orderButton.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             orderButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             orderButton.heightAnchor.constraint(equalToConstant: 50),
-        
+            
             nameField.bottomAnchor.constraint(equalTo: orderButton.topAnchor,constant: -10),
             nameField.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
             nameField.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
@@ -128,49 +133,11 @@ class DishDetailViewController: UIViewController {
             caloriesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             caloriesLabel.widthAnchor.constraint(equalToConstant: 100),
             
-           dishImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant:  -10),
+            dishImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant:  -10),
             dishImageView.topAnchor.constraint(equalTo: view.topAnchor),
             dishImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             dishImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-           
-            
-            
-
-            
-         
-            
-           
-            
-            
-//
-//            dishImageView.topAnchor.constraint(equalTo: view.topAnchor),
-//            dishImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            dishImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            dishImageView.heightAnchor.constraint(equalToConstant: view.frame.size.width / 2),
-//
-//
-//            titleLabel.topAnchor.constraint(equalTo: dishImageView.bottomAnchor,constant: 15),
-//            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 15),
-//            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -120),
-//
-//            caloriesLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-//            caloriesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
-//            caloriesLabel.widthAnchor.constraint(equalToConstant: 100),
-//
-//           descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 15),
-//           descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 15),
-//           descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -15),
-//
-//            nameField.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor,constant: 15),
-//            nameField.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 15),
-//            nameField.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -15),
-//            nameField.heightAnchor.constraint(equalToConstant: 50),
-//
-//            orderButton.topAnchor.constraint(equalTo: nameField.bottomAnchor,constant: 15),
-//            orderButton.widthAnchor.constraint(equalToConstant: view.frame.width / 2),
-//            orderButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            orderButton.heightAnchor.constraint(equalToConstant: 50)
-//
+       
         ])
         
         
@@ -184,11 +151,11 @@ class DishDetailViewController: UIViewController {
         dishImageView.kf.setImage(with: url)
         
         
-       
+        
     }
     
     
-//MARK:- Did tap Order Button
-  
+    //MARK:- Did tap Order Button
+    
     
 }

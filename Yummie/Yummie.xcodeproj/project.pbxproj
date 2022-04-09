@@ -34,6 +34,9 @@
 		28A0C7462801D447009A9A35 /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28A0C7442801D447009A9A35 /* DishListTableViewCell.xib */; };
 		28A0C7492801D732009A9A35 /* DishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7482801D732009A9A35 /* DishListViewController.swift */; };
 		28A0C74C2801D96E009A9A35 /* DishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C74B2801D96E009A9A35 /* DishListViewModel.swift */; };
+		28A0C74F2801F237009A9A35 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C74E2801F237009A9A35 /* OrderViewModel.swift */; };
+		28A0C7522801F24D009A9A35 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7512801F24D009A9A35 /* Order.swift */; };
+		28A0C7552801F503009A9A35 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7542801F503009A9A35 /* OrdersViewController.swift */; };
 		DE2D56E3F1FF651DD84270CA /* Pods_Yummie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E729627D5289B696A44E3839 /* Pods_Yummie.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		28A0C7442801D447009A9A35 /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		28A0C7482801D732009A9A35 /* DishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListViewController.swift; sourceTree = "<group>"; };
 		28A0C74B2801D96E009A9A35 /* DishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListViewModel.swift; sourceTree = "<group>"; };
+		28A0C74E2801F237009A9A35 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		28A0C7512801F24D009A9A35 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		28A0C7542801F503009A9A35 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		6551C907EA452470FD81E8F0 /* Pods-Yummie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.release.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.release.xcconfig"; sourceTree = "<group>"; };
 		AEE19828D116EB5165ED28E5 /* Pods-Yummie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.debug.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.debug.xcconfig"; sourceTree = "<group>"; };
 		E729627D5289B696A44E3839 /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +96,7 @@
 				282BA07027FF70D200D65155 /* HomeViewController.swift */,
 				282A8E4F28012C1300336ECF /* DishDetailViewController.swift */,
 				28A0C7482801D732009A9A35 /* DishListViewController.swift */,
+				28A0C7542801F503009A9A35 /* OrdersViewController.swift */,
 				282BA06127FF524000D65155 /* Onboarding */,
 			);
 			path = Controllers;
@@ -178,6 +185,7 @@
 				282BA06627FF563E00D65155 /* OnboardingSlide.swift */,
 				282BA07927FF7F4B00D65155 /* DishCategory.swift */,
 				282A8E2E27FFB1A100336ECF /* Dish.swift */,
+				28A0C7512801F24D009A9A35 /* Order.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				282A8E2227FFAC3900336ECF /* PopularDishesViewModel.swift */,
 				282A8E2527FFAC5500336ECF /* ChefsSpecialsViewModel.swift */,
 				28A0C74B2801D96E009A9A35 /* DishListViewModel.swift */,
+				28A0C74E2801F237009A9A35 /* OrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -372,14 +381,17 @@
 				282A8E45280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift in Sources */,
 				282BA06727FF563E00D65155 /* OnboardingSlide.swift in Sources */,
 				282BA08027FF831700D65155 /* CategorayViewModel.swift in Sources */,
+				28A0C7522801F24D009A9A35 /* Order.swift in Sources */,
 				282BA07A27FF7F4B00D65155 /* DishCategory.swift in Sources */,
 				28A0C7452801D447009A9A35 /* DishListTableViewCell.swift in Sources */,
+				28A0C7552801F503009A9A35 /* OrdersViewController.swift in Sources */,
 				28A0C74C2801D96E009A9A35 /* DishListViewModel.swift in Sources */,
 				282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */,
 				282BA07127FF70D200D65155 /* HomeViewController.swift in Sources */,
 				282BA07627FF7DF300D65155 /* CategoryCollectionViewCell.swift in Sources */,
 				282A8E5028012C1300336ECF /* DishDetailViewController.swift in Sources */,
 				282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */,
+				28A0C74F2801F237009A9A35 /* OrderViewModel.swift in Sources */,
 				28A0C7492801D732009A9A35 /* DishListViewController.swift in Sources */,
 				282BA06327FF526400D65155 /* OnboardingViewController.swift in Sources */,
 				282BA06D27FF5A6900D65155 /* OnboardingViewModel.swift in Sources */,

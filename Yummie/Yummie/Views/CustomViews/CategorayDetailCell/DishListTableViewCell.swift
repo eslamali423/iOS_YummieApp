@@ -17,12 +17,20 @@ class DishListTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dishImageView: UIImageView!
     
-  //MARK:- Configure
+  //MARK:- Configure with dish
     func configure (model : Dish){
         titleLabel.text = model.name
         descriptionLabel.text = model.discription
         guard let url = URL(string: model.image ?? "") else {return}
         dishImageView.kf.setImage(with: url)
     }
+    
+    //MARK:- Configure with order
+      func configure (model : Order){
+          titleLabel.text = model.name
+        descriptionLabel.text = model.dish?.name
+        guard let url = URL(string: model.dish?.image ?? "") else {return}
+          dishImageView.kf.setImage(with: url)
+      }
     
 }
