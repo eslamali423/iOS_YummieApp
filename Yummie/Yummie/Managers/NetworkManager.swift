@@ -13,9 +13,104 @@ class NetworkManager {
     
     struct Constants {
         static let baseUrl = "https://yummie.glitch.me"
+        static let allCategoriesUrl = "/dish-categories"
+        static let categoryDishs = "/dishes/"
+     //   https://yummie.glitch.me/dish-categories
+       // https://yummie.glitch.me/dishes/cat1
+    }
+    
+    //MARK:- Fetch All Categories
+    func fetchAllCategories (completion : @escaping (Result<[Category], Error>)->Void){
+        
+        guard let url =  URL(string: "\(Constants.baseUrl)\(Constants.allCategoriesUrl)") else {return}
+        
+        let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data , error == nil else  {return}
+            
+            do {
+                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                completion(.success(result.data.categories))
+             //   print("Resulttt :::: \(result.data.categories)")
+            }catch {
+                print(error.localizedDescription)
+                completion(.failure(error))
+            }
+            
+        }
+        task.resume()
+        
         
     }
     
+    //MARK:- Fetch All Categories
+    func fetchAllPopularDishs (completion : @escaping (Result<[Dish], Error>)->Void){
+        
+        guard let url =  URL(string: "\(Constants.baseUrl)\(Constants.allCategoriesUrl)") else {return}
+        
+        let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data , error == nil else  {return}
+            
+            do {
+                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                completion(.success(result.data.populars))
+             //   print("Resulttt :::: \(result.data.categories)")
+            }catch {
+                print(error.localizedDescription)
+                completion(.failure(error))
+            }
+            
+        }
+        task.resume()
+   
+    }
+    
+    //MARK:- Fetch All Categories
+    func fetchAllSpecials (completion : @escaping (Result<[Dish], Error>)->Void){
+        
+        guard let url =  URL(string: "\(Constants.baseUrl)\(Constants.allCategoriesUrl)") else {return}
+        
+        let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data , error == nil else  {return}
+            
+            do {
+                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                completion(.success(result.data.specials))
+             //   print("Resulttt :::: \(result.data.categories)")
+            }catch {
+                print(error.localizedDescription)
+                completion(.failure(error))
+            }
+            
+        }
+        task.resume()
+        
+        
+    }
+    //MARK:- Fetch ALl Dishs In Catigories with Category Id
+    func fetchCategoryDishs (categoryId : String, completion : @escaping (Result<[Dish], Error>)->Void) {
+        
+        guard let url = URL(string: "\(Constants.baseUrl)\(Constants.categoryDishs)\(categoryId)") else {
+           
+            return
+        }
+        
+        let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) {data,_,error  in
+            
+            guard let data =  data , error == nil else {return}
+            
+            do {
+                let result = try JSONDecoder().decode(CategoryDishResponse.self, from: data)
+                completion(.success(result.data))
+            }catch {
+                
+            }
+            
+            
+        }
+        task.resume()
+        
+        
+    }
     
     /// This function helps us to generate a urlRequest
     /// - Parameters:

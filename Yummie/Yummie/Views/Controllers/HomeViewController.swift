@@ -30,9 +30,9 @@ class HomeViewController: UIViewController {
         title = "Yummie"
         registerCells()
         
-        categoryViewModel.getCategories()
-        popularDishesViewModel.getDishes()
-        chefsSpecialViewModel.getDishes()
+        getCategories()
+        getPopularDishs()
+       getChefSpecials()
         
         
         categoryCollectionView.delegate = self
@@ -48,7 +48,44 @@ class HomeViewController: UIViewController {
         
     }
     
+    //MARK:- Get All Categories
+    func getCategories()  {
+        categoryViewModel.getCategories { (isSuccess) in
+            DispatchQueue.main.async { [weak self] in
+                if isSuccess{
+                    self?.categoryCollectionView.reloadData()
+                }
+            }
+            
+        }
+    }
     
+    //MARK:- Get All Popular Dishs
+    func getPopularDishs()  {
+        popularDishesViewModel.getPopularDishs { (isSuccess) in
+            DispatchQueue.main.async { [weak self] in
+                if isSuccess{
+                    self?.popularDishesCollectionView.reloadData()
+                }
+            }
+            
+        }
+    }
+    
+    //MARK:- Get All Popular Dishs
+    func getChefSpecials()  {
+        chefsSpecialViewModel.getChefSpecials { (isSuccess) in
+            DispatchQueue.main.async { [weak self] in
+                if isSuccess{
+                    self?.chefsSpecialsCollectionView.reloadData()
+                }
+            }
+            
+        }
+    }
+    
+    
+    //MARK:- Register Cells To Our Collection Views
     func registerCells()  {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifer, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifer)
         
@@ -76,7 +113,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         case categoryCollectionView :
             return categoryViewModel.categories.count
         case popularDishesCollectionView :
-            return popularDishesViewModel.dishes.count
+            return popularDishesViewModel.dishs.count
         case chefsSpecialsCollectionView :
             return chefsSpecialViewModel.dishes.count
         default:
@@ -100,7 +137,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 return UICollectionViewCell()
             }
             
-            cell.configure(model: popularDishesViewModel.dishes[indexPath.row])
+            cell.configure(model: popularDishesViewModel.dishs[indexPath.row])
             return cell
         case chefsSpecialsCollectionView :
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChefSpecialsCollectionViewCell.identifier, for: indexPath) as? ChefSpecialsCollectionViewCell else {
@@ -120,11 +157,16 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         
         if collectionView == categoryCollectionView {
             let dishListVC = storyboard?.instantiateViewController(identifier: "DishListViewController") as! DishListViewController
+            
+           
             dishListVC.category = categoryViewModel.categories[indexPath.row]
+         
+            
+            
             
             navigationController?.pushViewController(dishListVC, animated: true)
         }else {
-            let dish = collectionView == popularDishesCollectionView ? popularDishesViewModel.dishes[indexPath.row] : chefsSpecialViewModel.dishes[indexPath.row]
+            let dish = collectionView == popularDishesCollectionView ? popularDishesViewModel.dishs[indexPath.row] : chefsSpecialViewModel.dishes[indexPath.row]
             
             let dishVC = storyboard?.instantiateViewController(identifier: "DishDetailViewController") as! DishDetailViewController
             dishVC.dish = dish

@@ -10,23 +10,24 @@ import Foundation
 
 class PopularDishesViewModel {
     
-    var dishes : [Dish] = []
-   
-    func getDishes () {
+    var dishs : [Dish] = []
+    
+    func getPopularDishs (completion: @escaping (Bool)->Void) {
         
-        dishes =  [
+        NetworkManager.shared.fetchAllPopularDishs { (result) in
             
-            .init(id: "123", name: "Dish 1 ", discription: "best dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish everbest dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 123),
-            .init(id: "123", name: "Dish 2", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 3", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 4", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 5", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 6", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            
-                       
-                   ]
-
+            switch result {
+            case .success(let dishs):
+                self.dishs = dishs
+                completion(true)
+                
+            case .failure(let error) :
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
+        
+        
         
     }
-    
 }

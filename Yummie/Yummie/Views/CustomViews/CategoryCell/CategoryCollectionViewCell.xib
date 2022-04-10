@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-HZ-nG7" customClass="CardView" customModule="Yummie" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="65"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-hq-POE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ULU-hq-POE">
                                 <rect key="frame" x="8" y="8" width="40" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="rMI-Ea-CJJ"/>
@@ -28,6 +28,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C3-Sl-qgr">
                                 <rect key="frame" x="56" y="23" width="96" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="3Y0-EH-uaI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

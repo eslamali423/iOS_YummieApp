@@ -20,7 +20,7 @@ class DishListTableViewCell: UITableViewCell {
   //MARK:- Configure with dish
     func configure (model : Dish){
         titleLabel.text = model.name
-        descriptionLabel.text = model.discription
+        descriptionLabel.text = model.description
         guard let url = URL(string: model.image ?? "") else {return}
         dishImageView.kf.setImage(with: url)
     }

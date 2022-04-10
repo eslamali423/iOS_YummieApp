@@ -12,3 +12,21 @@ struct DishCategory  {
     let name : String?
     let image: String?
 }
+
+struct APIResponse : Codable {
+    
+    let data : Type
+}
+
+struct Type : Codable {
+    let categories : [Category]
+    let populars : [Dish]
+    let specials : [Dish]
+}
+
+struct Category : Codable {
+    var id : String = ""
+    var title : String = ""
+    var image: String = ""
+}
+

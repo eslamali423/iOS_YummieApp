@@ -12,7 +12,8 @@ class DishListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = DishListViewModel()
-    var category : DishCategory!
+  
+    var category : Category!
    
     
     override func viewDidLoad() {
@@ -20,13 +21,23 @@ class DishListViewController: UIViewController {
        // title = category.name
         registerCell()
         
-        viewModel.getDishes()
+         getDishes ()
         
         
         tableView.delegate = self
         tableView.dataSource = self
         
         
+    }
+    
+    func getDishes (){
+        viewModel.getDishes(categoryId: category.id) { (isSuccess) in
+            DispatchQueue.main.async { [weak self ] in
+                if isSuccess {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
     
     func registerCell()  {

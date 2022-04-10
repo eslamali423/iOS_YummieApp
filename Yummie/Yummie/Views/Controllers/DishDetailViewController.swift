@@ -16,8 +16,9 @@ class DishDetailViewController: UIViewController {
     
     private let dishImageView : UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.layer.cornerRadius = 10
         return image
     }()
     
@@ -45,6 +46,7 @@ class DishDetailViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .justified
         label.textColor = .darkGray
+        label.adjustsFontSizeToFitWidth = true
         label.font = .systemFont(ofSize: 15, weight: .regular)
         
         return label
@@ -145,7 +147,7 @@ class DishDetailViewController: UIViewController {
     func configure(){
         titleLabel.text = dish.name
         caloriesLabel.text = dish.formattedCalories
-        descriptionLabel.text = dish.discription
+        descriptionLabel.text = dish.description
         
         guard let url = URL(string: dish.image ?? "") else {return}
         dishImageView.kf.setImage(with: url)

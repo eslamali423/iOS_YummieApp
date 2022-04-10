@@ -23,7 +23,7 @@ class PopularDishCollectionViewCell: UICollectionViewCell {
     //MARK:- Configure Cell
     func configure (model : Dish)  {
         titleLabel.text = model.name
-        descriptionLabel.text = model.discription
+        descriptionLabel.text = model.description
         caloriesLable.text = model.formattedCalories
         guard let url = URL(string: model.image ?? "") else {return}
         dishImageView.kf.setImage(with: url)

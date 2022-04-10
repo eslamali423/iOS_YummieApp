@@ -18,8 +18,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     //MARK:- Configuration
-    func configure (model : DishCategory ) {
-        titleLabel.text = model.name
+    func configure (model : Category ) {
+        titleLabel.text = model.title ?? "UNKONWN"
         guard let url = URL(string: model.image ?? "") else {return }
         categoryImageView.kf.setImage(with: url)
 

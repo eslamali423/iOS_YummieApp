@@ -11,22 +11,23 @@ import Foundation
 class ChefsSpecialsViewModel {
     
     var dishes : [Dish] = []
-   
-    func getDishes () {
+    
+    func getChefSpecials (completion: @escaping (Bool)->Void) {
         
-        dishes =  [
+        NetworkManager.shared.fetchAllSpecials { (result) in
             
-            .init(id: "123", name: "Dish 1", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 123),
-            .init(id: "123", name: "Dish 2", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 3", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 4", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 5", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            .init(id: "123", name: "Dish 6", discription: "best dish ever", image: "https://res.cloudinary.com/dn4pokov0/image/upload/v1611311563/d3f69e36ea17c0e0bb129ba1403e24dc.png" , calories: 175),
-            
-                       
-                   ]
-
+            switch result {
+            case .success(let dishs):
+                self.dishes = dishs
+                completion(true)
+                
+            case .failure(let error) :
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
+        
+        
         
     }
-    
 }
