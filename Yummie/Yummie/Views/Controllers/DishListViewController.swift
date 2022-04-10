@@ -31,6 +31,7 @@ class DishListViewController: UIViewController {
     }
     
     func getDishes (){
+        guard   category != nil else {return}
         viewModel.getDishes(categoryId: category.id) { (isSuccess) in
             DispatchQueue.main.async { [weak self ] in
                 if isSuccess {

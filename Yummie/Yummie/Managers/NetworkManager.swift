@@ -15,6 +15,7 @@ class NetworkManager {
         static let baseUrl = "https://yummie.glitch.me"
         static let allCategoriesUrl = "/dish-categories"
         static let categoryDishs = "/dishes/"
+        static let OredersUrl = "/orders"
      //   https://yummie.glitch.me/dish-categories
        // https://yummie.glitch.me/dishes/cat1
     }
@@ -104,13 +105,51 @@ class NetworkManager {
             }catch {
                 
             }
-            
-            
+       
         }
         task.resume()
-        
-        
+ 
     }
+    //MARK:- Fetch Orders
+    func fetchAllOrders (completion : @escaping (Result<[Order], Error>)->Void) {
+        
+        guard let url = URL(string: "\(Constants.baseUrl)\(Constants.OredersUrl)") else {
+           
+            return
+        }
+        
+        let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) {data,_,error  in
+            
+            guard let data =  data , error == nil else {return}
+            
+            do {
+                let result = try JSONDecoder().decode(OrdersAPIResponse.self, from: data)
+                completion(.success(result.data))
+            }catch {
+                
+            }
+       
+        }
+        task.resume()
+    }
+    
+    //MARK:- Place Order
+    
+    func requestOrder( dish: Dish , completion: @escaping (Result<Data, Error>) -> Void
+      ) {
+        guard let url = URL(string: "\(Constants.baseUrl)\(Constants.OredersUrl)") else {return}
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpMethod = "POST"
+        
+        let bodyData = try? JSONSerialization.data(withJSONObject: dish, options: [])
+        urlRequest.httpBody = bodyData
+
+    }
+  
+    
+    
     
     /// This function helps us to generate a urlRequest
     /// - Parameters:

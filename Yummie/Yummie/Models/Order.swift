@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct Order {
+
+struct OrdersAPIResponse : Codable{
+    let data : [Order]
+}
+
+
+struct Order : Codable {
     let id : String?
     let name : String?
     let dish : Dish?

@@ -20,6 +20,8 @@ class ChefSpecialsCollectionViewCell: UICollectionViewCell {
    
     //MARK:- Configure Cell
     func configure (model : Dish)  {
+        dishImageView.layer.cornerRadius = 10
+
         titleLabel.text = model.name
         descriptionLabel.text = model.description
         caloriesLabel.text = model.formattedCalories

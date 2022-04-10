@@ -18,7 +18,8 @@ class OrdersViewController: UIViewController {
 
         registerCell()
 
-        viewModel.getOrders()
+        getOrder()
+      
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,8 +28,19 @@ class OrdersViewController: UIViewController {
 
     func registerCell()  {
         tableView.register(UINib(nibName: DishListTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: DishListTableViewCell.identifier)
+   
         
-        
+    }
+    
+    //MARK:- Get Orders
+    func getOrder()  {
+        viewModel.getOrders { (isSuccess) in
+            DispatchQueue.main.async { [weak self] in
+                if isSuccess {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
 
     

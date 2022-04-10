@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import ProgressHUD
 
 class DishDetailViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class DishDetailViewController: UIViewController {
         image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
+        image.contentCompressionResistancePriority(for: .vertical)
         return image
     }()
     
@@ -55,7 +57,7 @@ class DishDetailViewController: UIViewController {
     public let nameField : UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Enter your Namr"
+        textField.placeholder = "Enter your Name"
         
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         
@@ -83,6 +85,7 @@ class DishDetailViewController: UIViewController {
     
     
     var dish : Dish!
+    var viewModel = OrderViewModel()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -100,10 +103,7 @@ class DishDetailViewController: UIViewController {
         orderButton.addTarget(self, action: #selector(didTapOrderButton), for: .touchUpInside)
     }
     
-    @objc func didTapOrderButton(){
-        
-        
-    }
+  
     
     func applyConstraints() {
         
@@ -126,7 +126,8 @@ class DishDetailViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             
-            
+           
+
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor,constant: -10),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -120),
@@ -135,10 +136,12 @@ class DishDetailViewController: UIViewController {
             caloriesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -20),
             caloriesLabel.widthAnchor.constraint(equalToConstant: 100),
             
-            dishImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant:  -10),
+       dishImageView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant:  -10),
             dishImageView.topAnchor.constraint(equalTo: view.topAnchor),
             dishImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             dishImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+            dishImageView.heightAnchor.constraint(equalToConstant: view.frame.size.height / 1.6)
        
         ])
         
@@ -158,6 +161,22 @@ class DishDetailViewController: UIViewController {
     
     
     //MARK:- Did tap Order Button
-    
+    @objc func didTapOrderButton(){
+        guard let text = nameField.text , !text.isEmpty else {
+            ProgressHUD.showError("Please Enter Your Name")
+            return
+        }
+        viewModel.placeOrder(name: text, dish: dish) { isSuccess in
+            DispatchQueue.main.async {
+                if isSuccess {
+                    ProgressHUD.showSuccess("Your order has been sent", interaction: false)
+                    
+                }
+            }
+            
+        }
+        
+        
+    }
     
 }

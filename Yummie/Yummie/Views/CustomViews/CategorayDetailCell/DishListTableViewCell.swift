@@ -19,6 +19,8 @@ class DishListTableViewCell: UITableViewCell {
     
   //MARK:- Configure with dish
     func configure (model : Dish){
+        dishImageView.layer.cornerRadius = 10
+
         titleLabel.text = model.name
         descriptionLabel.text = model.description
         guard let url = URL(string: model.image ?? "") else {return}
@@ -27,6 +29,8 @@ class DishListTableViewCell: UITableViewCell {
     
     //MARK:- Configure with order
       func configure (model : Order){
+        dishImageView.layer.cornerRadius = 10
+
           titleLabel.text = model.name
         descriptionLabel.text = model.dish?.name
         guard let url = URL(string: model.dish?.image ?? "") else {return}
