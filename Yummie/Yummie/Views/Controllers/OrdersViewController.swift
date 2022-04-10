@@ -57,7 +57,7 @@ extension OrdersViewController : UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         DispatchQueue.main.async { [weak self] in
-            let dishVC = self?.storyboard?.instantiateViewController(identifier: "DishDetailViewController") as! DishDetailViewController
+            let dishVC = DishDetailViewController() 
             dishVC.dish = self?.viewModel.orders[indexPath.row].dish
             dishVC.orderButton.isHidden = false
             dishVC.nameField.isHidden = true

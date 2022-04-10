@@ -37,6 +37,9 @@
 		28A0C74F2801F237009A9A35 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C74E2801F237009A9A35 /* OrderViewModel.swift */; };
 		28A0C7522801F24D009A9A35 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7512801F24D009A9A35 /* Order.swift */; };
 		28A0C7552801F503009A9A35 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7542801F503009A9A35 /* OrdersViewController.swift */; };
+		28A0C7592802CBB3009A9A35 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C7582802CBB3009A9A35 /* NetworkManager.swift */; };
+		28A0C75C2802D27C009A9A35 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C75B2802D27C009A9A35 /* Method.swift */; };
+		28A0C75F2802D2A3009A9A35 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C75E2802D2A3009A9A35 /* Route.swift */; };
 		DE2D56E3F1FF651DD84270CA /* Pods_Yummie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E729627D5289B696A44E3839 /* Pods_Yummie.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,9 @@
 		28A0C74E2801F237009A9A35 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		28A0C7512801F24D009A9A35 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		28A0C7542801F503009A9A35 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		28A0C7582802CBB3009A9A35 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		28A0C75B2802D27C009A9A35 /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
+		28A0C75E2802D2A3009A9A35 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		6551C907EA452470FD81E8F0 /* Pods-Yummie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.release.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.release.xcconfig"; sourceTree = "<group>"; };
 		AEE19828D116EB5165ED28E5 /* Pods-Yummie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yummie.debug.xcconfig"; path = "Target Support Files/Pods-Yummie/Pods-Yummie.debug.xcconfig"; sourceTree = "<group>"; };
 		E729627D5289B696A44E3839 /* Pods_Yummie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yummie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,9 @@
 		282A8E3E27FFD1DE00336ECF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				28A0C7582802CBB3009A9A35 /* NetworkManager.swift */,
+				28A0C75B2802D27C009A9A35 /* Method.swift */,
+				28A0C75E2802D2A3009A9A35 /* Route.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A0C75C2802D27C009A9A35 /* Method.swift in Sources */,
 				282A8E4B28008F8700336ECF /* PopularDishCollectionViewCell.swift in Sources */,
 				282A8E45280086CA00336ECF /* ChefSpecialsCollectionViewCell.swift in Sources */,
 				282BA06727FF563E00D65155 /* OnboardingSlide.swift in Sources */,
@@ -389,9 +399,11 @@
 				282BA04927FF4E0500D65155 /* AppDelegate.swift in Sources */,
 				282BA07127FF70D200D65155 /* HomeViewController.swift in Sources */,
 				282BA07627FF7DF300D65155 /* CategoryCollectionViewCell.swift in Sources */,
+				28A0C7592802CBB3009A9A35 /* NetworkManager.swift in Sources */,
 				282A8E5028012C1300336ECF /* DishDetailViewController.swift in Sources */,
 				282BA04B27FF4E0500D65155 /* SceneDelegate.swift in Sources */,
 				28A0C74F2801F237009A9A35 /* OrderViewModel.swift in Sources */,
+				28A0C75F2802D2A3009A9A35 /* Route.swift in Sources */,
 				28A0C7492801D732009A9A35 /* DishListViewController.swift in Sources */,
 				282BA06327FF526400D65155 /* OnboardingViewController.swift in Sources */,
 				282BA06D27FF5A6900D65155 /* OnboardingViewModel.swift in Sources */,
