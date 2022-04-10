@@ -31,8 +31,8 @@ class DishListTableViewCell: UITableViewCell {
       func configure (model : Order){
         dishImageView.layer.cornerRadius = 10
 
-          titleLabel.text = model.name
-        descriptionLabel.text = model.dish?.name
+        titleLabel.text = model.dish?.name
+        descriptionLabel.text = model.name
         guard let url = URL(string: model.dish?.image ?? "") else {return}
           dishImageView.kf.setImage(with: url)
       }

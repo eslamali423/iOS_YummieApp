@@ -15,7 +15,7 @@ class NetworkManager {
         static let baseUrl = "https://yummie.glitch.me"
         static let allCategoriesUrl = "/dish-categories"
         static let categoryDishs = "/dishes/"
-        static let OredersUrl = "/orders"
+        static let OredersUrl = "/orders/"
      //   https://yummie.glitch.me/dish-categories
        // https://yummie.glitch.me/dishes/cat1
     }
@@ -120,10 +120,13 @@ class NetworkManager {
         
         let task =  URLSession.shared.dataTask(with: URLRequest(url: url)) {data,_,error  in
             
-            guard let data =  data , error == nil else {return}
+            guard let data =  data , error == nil else {
+              
+                return}
             
             do {
                 let result = try JSONDecoder().decode(OrdersAPIResponse.self, from: data)
+               
                 completion(.success(result.data))
             }catch {
                 
@@ -135,17 +138,37 @@ class NetworkManager {
     
     //MARK:- Place Order
     
-    func requestOrder( dish: Dish , completion: @escaping (Result<Data, Error>) -> Void
+    func requestOrder(name : String ,dish: Dish , completion: @escaping (Result<Bool, Error>) -> Void
       ) {
-        guard let url = URL(string: "\(Constants.baseUrl)\(Constants.OredersUrl)") else {return}
+        guard let url = URL(string: "\(Constants.baseUrl)\(Constants.OredersUrl)\(dish.id!)") else {
+                 print("Cant get the url")
+            return}
+        let params = [
+            "name" : name,
+            "id" : dish.id
+     
+        ]
+        
         
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "POST"
         
-        let bodyData = try? JSONSerialization.data(withJSONObject: dish, options: [])
+        let bodyData = try? JSONSerialization.data(withJSONObject: params, options: [])
         urlRequest.httpBody = bodyData
 
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                
+            guard let data = data , error == nil else {
+                completion(.failure(error!))
+                return}
+            
+            completion(.success(true))
+                   
+                   
+                  
+               }.resume()
+        
     }
   
     

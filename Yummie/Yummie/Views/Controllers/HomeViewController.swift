@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
     
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
         title = "Yummie"
         registerCells()
         
+        ProgressHUD.show()
         getCategories()
         getPopularDishs()
        getChefSpecials()
@@ -65,6 +67,7 @@ class HomeViewController: UIViewController {
         popularDishesViewModel.getPopularDishs { (isSuccess) in
             DispatchQueue.main.async { [weak self] in
                 if isSuccess{
+                    ProgressHUD.dismiss()
                     self?.popularDishesCollectionView.reloadData()
                 }
             }
@@ -98,7 +101,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func didTabCartButton(_ sender: Any) {
-        let dishVC = storyboard?.instantiateViewController(identifier: "DishListViewController") as! DishListViewController
+        let dishVC = storyboard?.instantiateViewController(identifier: "OrdersViewController") as! OrdersViewController
         
         
         navigationController?.pushViewController(dishVC, animated: true)

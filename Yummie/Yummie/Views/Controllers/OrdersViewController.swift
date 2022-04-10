@@ -15,7 +15,7 @@ class OrdersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
         registerCell()
 
         getOrder()
@@ -71,8 +71,7 @@ extension OrdersViewController : UITableViewDelegate, UITableViewDataSource {
         DispatchQueue.main.async { [weak self] in
             let dishVC = DishDetailViewController() 
             dishVC.dish = self?.viewModel.orders[indexPath.row].dish
-            dishVC.orderButton.isHidden = false
-            dishVC.nameField.isHidden = true
+          
             self?.navigationController?.pushViewController(dishVC, animated: true)
         }
     }

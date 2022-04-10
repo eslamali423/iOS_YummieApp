@@ -20,7 +20,7 @@ class CategorayViewModel {
             case .success(let categories):
                 self.categories = categories
                 completion(true)
-                print(self.categories[1].title)
+               
             case .failure(let error) :
                 completion(false)
                 print(error.localizedDescription)

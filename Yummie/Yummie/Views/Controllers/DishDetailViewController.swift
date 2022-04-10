@@ -90,6 +90,8 @@ class DishDetailViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+
         view.addSubview(dishImageView)
         view.addSubview(titleLabel)
         view.addSubview(caloriesLabel)
@@ -163,13 +165,14 @@ class DishDetailViewController: UIViewController {
     //MARK:- Did tap Order Button
     @objc func didTapOrderButton(){
         guard let text = nameField.text , !text.isEmpty else {
-            ProgressHUD.showError("Please Enter Your Name")
+            ProgressHUD.showError("Please, Enter your name")
             return
         }
         viewModel.placeOrder(name: text, dish: dish) { isSuccess in
             DispatchQueue.main.async {
                 if isSuccess {
-                    ProgressHUD.showSuccess("Your order has been sent", interaction: false)
+                    ProgressHUD.showSuccess("Your order has been received. 👨🏼‍🍳")
+
                     
                 }
             }

@@ -18,7 +18,9 @@ class DishListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // title = category.name
+        view.backgroundColor = .systemBackground
+        
+        title = category.title
         registerCell()
         
          getDishes ()

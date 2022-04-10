@@ -27,7 +27,19 @@ class OrderViewModel {
     }
     
     func placeOrder (name :  String, dish : Dish, completion: @escaping (Bool)->Void) {
-     completion(true)
+    
+        NetworkManager.shared.requestOrder(name: name, dish: dish) { (result) in
+            switch result {
+            case.success( _):
+                completion(true)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(false)
+        }
+    
+    
     }
     
+}
+
 }
