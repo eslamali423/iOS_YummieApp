@@ -48,11 +48,13 @@ class OnboardingViewController: UIViewController {
     //MARK:- Did Tap Next Button
     @IBAction func nextButton(_ sender: Any) {
         if currentPage == viewModel.slides.count - 1 {
+            UserDefaults.standard.setValue(true, forKey: "OnBorded")
             let homeController =  (storyboard?.instantiateViewController(identifier: "HomeNavigationController"))! as UINavigationController
             homeController.modalPresentationStyle = .fullScreen
             homeController.modalTransitionStyle = .crossDissolve
             present(homeController, animated: true)
         }else  {
+
             currentPage  += 1
             let indexPath = IndexPath(item: currentPage, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
