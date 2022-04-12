@@ -13,7 +13,7 @@ struct DishCategory  {
     let image: String?
 }
 
-struct APIResponse : Codable {
+struct CategoryAPIResponse : Codable {
     
     let data : Type
 }

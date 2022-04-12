@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class NetworkManager {
     
@@ -16,6 +17,7 @@ class NetworkManager {
         static let allCategoriesUrl = "/dish-categories"
         static let categoryDishs = "/dishes/"
         static let OredersUrl = "/orders/"
+        static let categoiesUrl = "\(baseUrl)\(allCategoriesUrl)"
      //   https://yummie.glitch.me/dish-categories
        // https://yummie.glitch.me/dishes/cat1
     }
@@ -29,7 +31,7 @@ class NetworkManager {
             guard let data = data , error == nil else  {return}
             
             do {
-                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                let result = try JSONDecoder().decode(CategoryAPIResponse.self, from: data)
                 completion(.success(result.data.categories))
              //   print("Resulttt :::: \(result.data.categories)")
             }catch {
@@ -52,7 +54,7 @@ class NetworkManager {
             guard let data = data , error == nil else  {return}
             
             do {
-                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                let result = try JSONDecoder().decode(CategoryAPIResponse.self, from: data)
                 completion(.success(result.data.populars))
              //   print("Resulttt :::: \(result.data.categories)")
             }catch {
@@ -74,7 +76,7 @@ class NetworkManager {
             guard let data = data , error == nil else  {return}
             
             do {
-                let result = try JSONDecoder().decode(APIResponse.self, from: data)
+                let result = try JSONDecoder().decode(CategoryAPIResponse.self, from: data)
                 completion(.success(result.data.specials))
              //   print("Resulttt :::: \(result.data.categories)")
             }catch {
@@ -159,7 +161,7 @@ class NetworkManager {
 
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 
-            guard let data = data , error == nil else {
+            guard  (data != nil) , error == nil else {
                 completion(.failure(error!))
                 return}
             
@@ -168,6 +170,23 @@ class NetworkManager {
                    
                   
                }.resume()
+        
+    }
+    
+    
+    //MARK:- fetch data with alamofire and generics
+    func fetchData<T: Codable> (url : String, responseModel: T.Type, completion: @escaping (Result<T, Error>)->Void) {
+        AF.request(url, method: .get, parameters: [:], headers: [:]).responseDecodable(of: T.self) { (response) in
+            guard let statusCode = response.response?.statusCode else  {return }
+            
+            if statusCode == 200 { // success
+                
+                guard let jsonResponse = try? response.result.get() else {return}
+                guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {return}
+                guard let result = try? JSONDecoder().decode(T.self, from: jsonData) else {return}
+                completion(.success(result))
+            }
+        }
         
     }
   
