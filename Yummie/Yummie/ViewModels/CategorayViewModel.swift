@@ -12,6 +12,7 @@ class CategorayViewModel {
     var categories : [Category] = []
     
     
+    
     func getCategories (completion: @escaping (Bool)->Void) {
         
         NetworkManager.shared.fetchAllCategories { (result) in
@@ -30,21 +31,22 @@ class CategorayViewModel {
     }
     
     func fetchCategory(completion: @escaping (Bool)->Void){
-        NetworkManager.shared.fetchData(url: NetworkManager.Constants.categoiesUrl, responseModel: CategoryAPIResponse.self) { (categoryResult) in
-           
-            switch categoryResult {
-            case .success(let categories):
-                self.categories = categories.data.categories
-                completion(true)
-               
-            case .failure(let error) :
-                completion(false)
-                print(error.localizedDescription)
+        CategoriesAPI.shared.getCategories { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                
+                case .success( let categories):
+                    for newCategory in categories!.data.categories {
+                        self.categories.append(newCategory)
+                      //  print ("Name ::: \(self.categories[0].title)")
+                    }
+                    completion(true)
+                case .failure(_):
+                    print("Get Nothing")
+                }
             }
-            
-            
+         
         }
-        
         
     }
     

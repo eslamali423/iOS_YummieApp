@@ -52,9 +52,11 @@ class HomeViewController: UIViewController {
     
     //MARK:- Get All Categories
     func getCategories()  {
-        categoryViewModel.getCategories { (isSuccess) in
+        
+        categoryViewModel.fetchCategory { (isSuccess) in
             DispatchQueue.main.async { [weak self] in
                 if isSuccess{
+                 
                     self?.categoryCollectionView.reloadData()
                 }
             }
