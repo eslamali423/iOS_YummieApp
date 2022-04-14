@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
     
     //MARK:- Get All Popular Dishs
     func getPopularDishs()  {
-        popularDishesViewModel.getPopularDishs { (isSuccess) in
+        popularDishesViewModel.fetchPopularDishes { (isSuccess) in
             DispatchQueue.main.async { [weak self] in
                 if isSuccess{
                     ProgressHUD.dismiss()

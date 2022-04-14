@@ -30,4 +30,27 @@ class PopularDishesViewModel {
         
         
     }
+    
+    
+    func fetchPopularDishes(completion: @escaping (Bool)->Void) {
+        PopularDishesAPI.shared.getPopularDishes { (result) in
+            
+            switch result {
+            
+            case .success( let response ):
+                for newDish in response!.data.populars{
+                    self.dishs.append(newDish)
+                }
+                completion(true)
+            case .failure(let error) :
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    
+    
+    
 }
